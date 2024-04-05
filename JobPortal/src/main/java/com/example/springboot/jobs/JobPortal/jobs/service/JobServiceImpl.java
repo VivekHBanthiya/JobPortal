@@ -35,6 +35,7 @@ public class JobServiceImpl implements JobService{
     public void addJob(Jobs jobs) {
 //       jobs.setId(nextId++);//here we are settingid and post inc will increment id each time
 //        job.add(jobs); //adding job in arraylist using arraylist method .add
+
         jobRepository.save(jobs);
     }
 

@@ -1,5 +1,6 @@
 package com.example.springboot.jobs.JobPortal.jobs.Controller;
 
+import com.example.springboot.jobs.JobPortal.Company.Entity.Company;
 import com.example.springboot.jobs.JobPortal.jobs.Entity.Jobs;
 import com.example.springboot.jobs.JobPortal.jobs.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,12 +1,13 @@
 package com.example.springboot.jobs.JobPortal.jobs.Entity;
 
+import com.example.springboot.jobs.JobPortal.Company.Entity.Company;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor //lombok annotation for constructor with full value
 @Data
-@NoArgsConstructor //lombok annotation for constructor with null value
+@NoArgsConstructor //lombok annotation for constructor with  null value
 @Getter //lombok annotation for getter method
 @Setter //lombok annotation for setter method
 @ToString //for to string method
@@ -14,13 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 //@Table(name = "job_table") // to change table name
 public class Jobs {
     @Id //Primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //to auto generate the unique value of primary key i.e. id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) //to auto generate the unique value of primary key i.e. id
     private long id;
     @Column(nullable = false)
     private String role;
-
-    @Column(nullable = false)
-    private String company;
 
     @Column(nullable = false)
     private String location;
@@ -31,6 +29,10 @@ public class Jobs {
     private double minSalary;
 
     private boolean bond;
+
+    @ManyToOne
+    private Company company;
+
 
 
     //if we havent use AllArgsConstructor we need to manually call constructor
