@@ -1,6 +1,7 @@
 package com.example.springboot.jobs.JobPortal.Company.Entity;
 
 import com.example.springboot.jobs.JobPortal.jobs.Entity.Jobs;
+import com.example.springboot.jobs.JobPortal.reviews.Entity.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,5 +29,8 @@ public class Company {
     @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Jobs> jobs;
-    // private List<Reviews> reviews;
+
+
+    @OneToMany(mappedBy = "company")
+     private List<Review> review;
 }
